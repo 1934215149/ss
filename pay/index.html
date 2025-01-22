@@ -36,9 +36,9 @@
             </div>
         </form>
     </div>
-    <div style="font-size: 0.9rem;">
+    <!-- <div style="font-size: 0.9rem;">
         Copyright © MadDog | <a target="_blank" href="https://github.com/maddog888/ps_pal/">Ps_Pal项目源码</a>
-    </div>
+    </div> -->
 </body>
 <script>
     // 注意！！！
@@ -58,13 +58,13 @@
     // 设置打赏金额为1到10之间的随机整数
     var price = document.getElementById('price');
     price.value = String(Math.floor(Math.random() * 10) + 1)+'.00';
-
+    price.value = '9.90'
     // 获取当前域名地址
     const currentUrl = window.location.href;
 
     // 设置同步和异步回调URL
     var rurl = document.getElementById('rurl');
-    rurl.value = "https://www.google.com/";
+    rurl.value = "http://149.88.67.19:1105/group.php/index/successok.html";
     var nurl = document.getElementById('nurl');
     nurl.value = currentUrl;
 
