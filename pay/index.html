@@ -108,7 +108,7 @@
         
         const hash = await sha256(signText);
         console.log(`SHA-256 hash: ${hash}`);
-        alert(hash)
+        // alert(hash)
         sign.value=hash
         document.getElementById("formId").submit();
         return hash;
