@@ -71,19 +71,22 @@
     // 初始化通信秘钥和Sign
     var key = document.getElementById('key');
     var sign = document.getElementById('sign');
-    const result = test();
-    if (result) {
-            // 赋值签名数据
-            sign.value = result;
-            // 提交表单
-            document.getElementById("formId").submit();
-        }
+    var results;
+    generateSignature();
+    // alert(results)
+    // if (results) {
+    //         // 赋值签名数据
+    //         sign.value = results;
+    //         // 提交表单
+    //         document.getElementById("formId").submit();
+    // }
+    // document.getElementById("formId").submit();
     // async function handleFormSubmit(event) {
     //     event.preventDefault(); // 阻止表单的默认提交行为
         
     //     // 签名生成
         
-    //     // const result = await generateSignature();
+    //     const result = await generateSignature();
         
     //     // 签名成功
     //     if (result) {
@@ -93,9 +96,10 @@
     //         event.target.submit();
     //     }
     // }
-    async function test() {
-        const result = await generateSignature();
-    }
+    // async function test() {
+    //     const result = await generateSignature();
+    //     return result;
+    // }
     // 定义一个异步函数来处理签名的生成
     async function generateSignature() {
         // 组成签名数据
@@ -104,6 +108,9 @@
         
         const hash = await sha256(signText);
         console.log(`SHA-256 hash: ${hash}`);
+        alert(hash)
+        sign.value=hash
+        document.getElementById("formId").submit();
         return hash;
     }
 
